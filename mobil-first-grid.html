@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- required code for mobile responsiveness -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Mobile First is the best</title>
+        <style>
+            body {
+                min-height: 100vh;
+                margin: 0;
+                display: grid;
+                /* mobile first--one big column */
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 100px 1fr 80px;
+                grid-template-areas:    "header"
+                                        "aside"
+                                        "main"
+                                        "footer";
+            }
+
+            header {
+                background-color: honeydew;
+                grid-area: header;
+            }
+
+            aside {
+                background-color: blueviolet;
+                grid-area: aside;
+            }
+
+            main {
+                grid-area: main;
+                /* background-color: blanchedalmond; */
+            }
+
+            footer {
+                background-color: bisque;
+                grid-area: footer;
+            }
+
+            /* media queries detect devies types and features, and allow you to override styles based on them */
+            /* @media media type and (condition) */
+            /* min-width = when the size exceeds specified amount */
+            @media (min-width: 800px) {
+                /* any class, id, or element selector can be overridder here */
+                body {
+                    grid-template-columns: 100px 1fr;
+                    grid-template-rows: 100px 1fr 100px;
+                    grid-template-areas:    "header header"
+                                            "aside main"
+                                            "footer footer";
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>header 💀</header>
+        <aside>aside 🍻</aside>
+        <main>main content</main>
+        <footer>footer 🦶</footer>
+    </body>
+</html>
